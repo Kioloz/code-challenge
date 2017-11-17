@@ -13,10 +13,10 @@ def get_args():
     if re.match('^0[1-9]{1}|1[012]{1}$', month):
         if re.match('(19|20)\d\d$', year):
             if not re.match('^[1-9][0-9]{2,3}x[1-9][0-9]{2,3}$', res):
-                print('Не верный формат разрешения')
+                print('Неверный формат разрешения')
                 exit()
         else:
-            print('Не верный формат года')
+            print('Неверный формат года')
             exit()
         month = int(month) - 1
         if 0 < month < 10:
@@ -24,7 +24,7 @@ def get_args():
         elif month == 0:
             month = '12'
     else:
-        print('Не верный формат месяца')
+        print('Неверный формат месяца')
         exit()
     return month, year, res
 
@@ -95,5 +95,5 @@ if __name__ == "__main__":
         link = find_publication(month, year)
         get_pictures(link, res)
     except KeyboardInterrupt:
-        print('Остановленно по требованию')
+        print('Остановлено по требованию')
         exit()
